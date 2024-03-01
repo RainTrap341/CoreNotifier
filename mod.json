@@ -1,0 +1,19 @@
+{
+	"Name": "CoreNotifier",
+	"Description": "Notify your core-ready.",
+	"LoadPriority": 3,
+	"RequiredOnClient": false,
+	"Version": "0.0.1",
+
+	"Scripts": [
+		{
+			"Path": "core_notifier.nut",
+			"RunOn": "(CLIENT || SERVER) && MP",
+			"ClientCallback": {
+				"After": "CoreNotifierInit"
+			}
+		}
+	]
+
+
+}
