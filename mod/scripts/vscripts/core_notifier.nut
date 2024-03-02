@@ -59,11 +59,14 @@ void function _CoreReadyMessage( entity player )
 	string coreOnlineHint = expect string( weapon.GetWeaponInfoFileKeyField( "readyhint" ) )
 
 	AnnouncementData announcement = CreateAnnouncementMessage( player, coreOnlineMessage, coreOnlineHint, TEAM_COLOR_YOU )
-    announcement.announcementStyle = ANNOUNCEMENT_STYLE_BIG
+    // announcement.announcementStyle = ANNOUNCEMENT_STYLE_BIG
 	announcement.displayConditionCallback = ConditionPlayerIsTitan
 	announcement.subText = coreOnlineHint
-    announcement.soundAlias = ""
     announcement.duration = 1.0
+
+    announcement.announcementStyle = ANNOUNCEMENT_STYLE_QUICK
+	announcement.soundAlias = SFX_HUD_ANNOUNCE_QUICK
+
 	AnnouncementFromClass( player, announcement )
 
 }
